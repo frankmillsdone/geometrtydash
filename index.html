@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geometry Dash Lite</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(45deg, #000428, #004e92);
+            font-family: 'Orbitron', sans-serif;
+        }
+        .header {
+            text-align: center;
+            padding: 20px;
+            font-size: 42px;
+            color: #00ff88;
+            text-shadow: 0 0 15px rgba(0, 255, 136, 0.7);
+            margin-bottom: 20px;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px #00ff88, 0 0 20px #00ff88;
+            }
+            to {
+                text-shadow: 0 0 20px #00ff88, 0 0 30px #00ff88;
+            }
+        }
+        .game-container {
+            width: 100%;
+            max-width: 900px;
+            height: 85vh;
+            border: 3px solid #00ff88;
+            border-radius: 15px;
+            box-shadow: 0 0 30px rgba(0, 255, 136, 0.3);
+            background-color: #000;
+            overflow: hidden;
+            position: relative;
+        }
+        .game-container::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #00ff88, #00bfff);
+            z-index: -1;
+            border-radius: 16px;
+            animation: border-animation 3s linear infinite;
+        }
+        @keyframes border-animation {
+            0% {
+                filter: hue-rotate(0deg);
+            }
+            100% {
+                filter: hue-rotate(360deg);
+            }
+        }
+        @media (max-width: 768px) {
+            .game-container {
+                height: 70vh;
+            }
+            .header {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">GEOMETRY DASH LITE</div>
+    <iframe 
+        class="game-container"
+        src="https://geometrydashlitepc.io/game/geometry-dash-lite/"
+        frameborder="0"
+        allowfullscreen
+        scrolling="no"
+    ></iframe>
+</body>
+</html> 
